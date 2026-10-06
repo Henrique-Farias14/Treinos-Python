@@ -1,0 +1,119 @@
+programa {
+  funcao inicio() {
+    inteiro produto
+    inteiro continuar = 1, itens = 0
+    real valorTotal = 0, desconto, valorFinal
+
+
+    escreva("===============================\n")
+    escreva("     LANCHONETE DO SENAI\n")
+    escreva("===============================\n")
+
+
+    enquanto (continuar == 1){
+
+    escreva("\n-------------------------------\n")
+    escreva("\nCARDÁPIO:")
+    escreva("\n1 - X-Burger......R$ 10,00")
+    escreva("\n2 - X-Salada......R$ 12,00")
+    escreva("\n3 - Refrigerante..R$ 5,00")
+    escreva("\n4 - Batata Frita..R$ 8,00")
+    escreva("\n0 - Finalizar pedido")
+    escreva("\n \nDigite o código do Produto: ")
+    leia(produto)
+
+    se(produto <= 4){
+
+      escolha (produto){
+      caso 1:
+      escreva("Você adicionou X-Burger ao seu pedido.")
+      valorTotal = valorTotal + 10
+      itens = itens + 1
+      escreva("\nDeseja continuar comprando?\n1 - Sim\n2 - Não\nOpção:")
+      leia(continuar)
+      enquanto (continuar != 1 e continuar != 2){
+      escreva("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+        escreva("ERRO: Código não listado! Tente novamente.")
+        escreva("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+      escreva("Deseja continuar comprando?\n1 - Sim\n2 - Não\nOpção:")
+      leia(continuar)
+      }
+      pare
+
+      caso 2:
+      escreva("Você adicionou X-Salada ao seu pedido.")
+      valorTotal = valorTotal + 12
+      itens = itens + 1
+      escreva("\nDeseja continuar comprando?\n1 - Sim\n2 - Não\nOpção:")
+      leia(continuar)
+      enquanto (continuar != 1 e continuar != 2){
+      escreva("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+        escreva("ERRO: Código não listado! Tente novamente.")
+        escreva("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+      escreva("Deseja continuar comprando?\n1 - Sim\n2 - Não\nOpção:")
+      leia(continuar)
+      }
+      pare
+
+      caso 3:
+      escreva("Você adicionou Refrigerante ao seu pedido.")
+      valorTotal = valorTotal + 5
+      itens = itens +1
+      escreva("\nDeseja continuar comprando?\n1 - Sim\n2 - Não\nOpção:")
+      leia(continuar)
+      enquanto (continuar != 1 e continuar != 2){
+      escreva("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+        escreva("ERRO: Código não listado! Tente novamente.")
+        escreva("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+      escreva("Deseja continuar comprando?\n1 - Sim\n2 - Não\nOpção:")
+      leia(continuar)
+      }
+      pare
+
+      caso 4:
+      escreva("Você adicionou Batata Frita ao seu pedido.")
+      valorTotal = valorTotal + 8
+      itens = itens + 1
+      escreva("\nDeseja continuar comprando?\n1 - Sim\n2 - Não\nOpção:")
+      leia(continuar)
+      enquanto (continuar != 1 e continuar != 2){
+      escreva("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+        escreva("ERRO: Código não listado! Tente novamente.")
+        escreva("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+      escreva("Deseja continuar comprando?\n1 - Sim\n2 - Não\nOpção:")
+      leia(continuar)
+      }
+      pare
+
+      caso 0:
+      escreva("\nVocê finalizou seu pedido.\n")
+      continuar = 2
+      pare
+      }
+      }senao{
+        escreva("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+        escreva("ERRO: Código não listado! Tente novamente.")
+        escreva("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+      }
+    }
+    desconto = valorTotal * 0.10
+    valorFinal = valorTotal - desconto
+
+
+      escreva("\n===============================\n")
+      escreva("        RESUMO DO PEDIDO\n")
+      escreva("===============================\n")
+      escreva("Itens selecionados: " , itens)
+      escreva("\nTotal sem desconto: R$ " , valorTotal , "\n\n")
+      se(valorTotal >= 30){
+        escreva("Desconto aplicado: SIM.\n")
+        escreva("\nTOTAL A PAGAR: R$ " , valorFinal , "\n")
+      }senao{
+        escreva("Desconto aplicado: NÃO.\n")
+        escreva("\nTOTAL A PAGAR: R$ " , valorTotal , "\n")
+      }
+      escreva("\nObrigado pela preferência!\nEncerrando atendimento...")
+
+
+  }
+}
