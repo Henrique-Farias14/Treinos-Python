@@ -14,6 +14,7 @@ while opcao != 4:
     print("2 - listar Alunos")
     print("3 - Consultar Média")
     print("4 - Finalizar o programa")
+    print("==========================")
     try:
         opcao = int(input("Digite sua opcao: "))
         match opcao:
@@ -38,11 +39,22 @@ while opcao != 4:
                     print("Nota 2:", aluno[2])
                     print("----------------")
             case 3:
-                print("Nome:", aluno[0])
-                print("Nota 1:", aluno[1])
-                print("Nota 2:", aluno[2])
-                print("Média: ", aluno[1] + aluno[2] / 2)
+                encontrado = False
+                pesquisa = input("Digite o nome do aluno: ")
+                for aluno in alunos:
+                    if pesquisa == aluno[0]:
+                        encontrado = True
+                        print("Nome:", aluno[0])
+                        print("Nota 1:", aluno[1])
+                        print("Nota 2:", aluno[2])
+                        print("Média: ", (aluno[1] + aluno[2]) / 2)
+                        break
+                if not encontrado:
+                    print("Aluno não encontrado!")
+                    print("Tente novamente!")
             case 4:
+                print("Registrando...")
+                time.sleep(1)
                 print("Finalizando o programa...")
                 time.sleep(1)
             case _:
@@ -51,5 +63,7 @@ while opcao != 4:
                 print("Opção inválida!")
                 print("Tente novamente!")
     except ValueError:
-        print("Essa não é uma opção!")
-        print("Tente novamente!")
+            print("Registrando...")
+            time.sleep(1)
+            print("Essa não é uma opção!")
+            print("Tente novamente!")
